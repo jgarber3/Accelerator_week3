@@ -21,4 +21,7 @@ cancelled %>% group_by(unique_day) %>% summarise(count = n()) %>%
  ggplot(mapping = aes(x=unique_day, y=count))  + geom_line() + geom_point()
 
 #5.6.7 5 Which carrier has the worst delays
-not_cancelled %>% group_by(carrier) %>% summarise(total_time = sum(dep_delay)) %>% arrange(desc(total_time))
+not_cancelled %>% group_by(carrier) %>% summarise(total_time = sum(arr_delay)) %>% arrange(desc(total_time))
+
+#5.6.7 6 What does the sort paramter to count do?
+#answer if you're counting on a table the sort param defaults to FALSE and will sort decs if set to TRUE
